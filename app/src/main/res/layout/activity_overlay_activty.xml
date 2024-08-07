@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OverLayService.OverlayActivty">
+
+        <ImageView
+            android:id="@+id/ic_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/home_ic"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:visibility="visible" />
+
+    <ImageView
+            android:id="@+id/logout_ic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/logout_ic"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:visibility="visible" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/settingtext_overlay"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
+
+    <Button
+        android:id="@+id/btnEnable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/custom_bg_gradient"
+        android:fontFamily="@font/font_family_robotics"
+        android:text="Enable" />
+    </LinearLayout>
+</RelativeLayout>

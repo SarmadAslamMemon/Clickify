@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityFeedbackType="feedbackSpoken"
+    android:notificationTimeout="100"
+    android:accessibilityEventTypes="typeViewClicked|typeWindowContentChanged|typeViewFocused|typeAllMask"
+    android:packageNames="com.example.clickify"
+    android:canRetrieveWindowContent="true"
+    android:accessibilityFlags="flagDefault|flagRetrieveInteractiveWindows|flagRequestTouchExplorationMode|flagSendMotionEvents|flagReportViewIds|flagInputMethodEditor"
+    android:settingsActivity=".SettingsActivity"
+    >
+</accessibility-service>
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:accessibilityFeedbackType="feedbackSpoken"-->
+<!--    android:notificationTimeout="100"-->
+<!--    android:accessibilityEventTypes="typeViewClicked|typeWindowContentChanged|typeViewFocused|typeAllMask"-->
+<!--    android:packageNames="com.example.clickify"-->
+<!--    android:canRetrieveWindowContent="true"-->
+<!--    android:accessibilityFlags="flagDefault|flagRetrieveInteractiveWindows|flagRequestTouchExplorationMode|flagSendMotionEvents|flagReportViewIds|flagInputMethodEditor"-->
+<!--    android:settingsActivity=".SettingsActivity">  </accessibility-service>-->
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:accessibilityEventTypes="typeAllMask"-->
+<!--    android:accessibilityFeedbackType="feedbackSpoken"-->
+<!--    android:notificationTimeout="100"-->
+<!--    android:canRetrieveWindowContent="true"-->
+<!--    android:accessibilityFlags="flagDefault|flagRetrieveInteractiveWindows"-->
+<!--    android:description="@string/accessibility_service_description"-->
+
+<!--    android:packageNames="com.example.clickify" />-->

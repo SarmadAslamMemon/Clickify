@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Clickify</string>
+        <string name="accessibility_service_description">Auto Click Service</string>
+        <string name="settingtext_overlay">Hi Welcome to Auto Clicker !\nPlease click on enable button to \nAllow permission to overlay other apps.</string>
+</resources>
