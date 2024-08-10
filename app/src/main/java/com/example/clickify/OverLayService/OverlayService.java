@@ -105,9 +105,6 @@ public class OverlayService extends Service {
 
         startIcon.setOnClickListener(v -> {
             sm.isStarted(true);
-            if (isBound) {
-//                overlayPointerService.simulateClickAtPointer(sm.getXAxis(), sm.getYAxis());
-            }
         });
 
         stopIcon.setOnClickListener(v -> {
@@ -116,6 +113,8 @@ public class OverlayService extends Service {
                 isViewAttached = false;
             }
             stopSelf();
+           stopService(new Intent(this, OverlayPointerService.class));
+
         });
 
         settingsIcon.setOnClickListener(v -> showSettingsDialog());
@@ -124,7 +123,7 @@ public class OverlayService extends Service {
     private void showSettingsDialog() {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(() -> {
-            ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(overlayView.getContext(), com.google.android.material.R.style.AlertDialog_AppCompat);
+            ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(overlayView.getContext(),R.style.Theme_Clickify);
 
             LayoutInflater inflater = LayoutInflater.from(contextThemeWrapper);
             View settingsView = inflater.inflate(R.layout.setting_layout, null);

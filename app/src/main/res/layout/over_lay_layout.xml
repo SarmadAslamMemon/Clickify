@@ -6,6 +6,7 @@
     android:background="#E1C57987"
     android:gravity="center"
     android:padding="8dp"
+    android:importantForAccessibility="no"
     >
 
     <LinearLayout

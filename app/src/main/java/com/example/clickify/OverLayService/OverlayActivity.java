@@ -14,8 +14,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.clickify.AdminDashBoard.AdminDashBoard;
-import com.example.clickify.MyAccessibilityService;
+import com.example.clickify.AutoClickService;
 import com.example.clickify.Login.LoginScreen;
 import com.example.clickify.R;
 import com.example.clickify.SessionManager.SessionManager;
@@ -40,12 +42,9 @@ public class OverlayActivity extends AppCompatActivity {
 
         checkIfAdmin();
 
-        home_ic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(OverlayActivity.this, AdminDashBoard.class));
-                finish();
-            }
+        home_ic.setOnClickListener(v -> {
+            startActivity(new Intent(OverlayActivity.this, AdminDashBoard.class));
+            finish();
         });
 
         logout_ic.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +85,7 @@ public class OverlayActivity extends AppCompatActivity {
     private void checkPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             requestOverlayPermission();
-        } else if (!isAccessibilityServiceEnabled(MyAccessibilityService.class)) {
+        } else if (!isAccessibilityServiceEnabled(AutoClickService.class)) {
             requestAccessibilityPermission();
         } else {
             startSomeService();

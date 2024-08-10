@@ -118,6 +118,6 @@ public class SessionManager {
     public int getYAxis() {return pref.getInt(Y_CORODINATES,0);}
 
     public boolean getIsStarted() {
-        return pref.getBoolean(IS_STARTED,true);
+        return pref.getBoolean(IS_STARTED,false);
     }
 }

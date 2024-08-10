@@ -6,10 +6,13 @@ import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.IBinder;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
@@ -31,13 +34,14 @@ public class OverlayPointerService extends Service {
         // Create a window manager instance
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
-        // Create the pointer view
         pointerView = new View(this);
-        pointerView.setBackgroundResource(R.drawable.pointer_svg_repo); // Use your pointer drawable
+
+        // Set drawable resource to the ImageView
+        pointerView.setBackgroundResource(R.drawable.pointer_svg_repo);
 
         // Calculate pixel size from dp to pixels
         float scale = getResources().getDisplayMetrics().density;
-        int sizeInDp = 40;
+        int sizeInDp = 70;  // Assuming the XML layout's width and height are 70dp
         int sizeInPixels = (int) (sizeInDp * scale + 0.5f);
 
         // Get screen dimensions
@@ -98,6 +102,7 @@ public class OverlayPointerService extends Service {
                         params.y = newY;
                         windowManager.updateViewLayout(pointerView, params);
 
+                        Log.d("AutoClickService","X axis : "+newX+"Y Axis : "+newY);
                         // Send the updated coordinates to OverlayService
                         savePointerCoordinates(newX, newY);
                         return true;
@@ -126,5 +131,3 @@ public class OverlayPointerService extends Service {
         return null;
     }
 }
-
-
